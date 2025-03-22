@@ -18,8 +18,13 @@ public class WeaponService {
         return weaponRepository.findById(id).get();
     }
 
-    public Weapon getRandomWeapon(String char_type){
-        List<Weapon> stuff = weaponRepository.GetAllWeaponsForCharType(char_type);
+    public Weapon getRandomEnemyWeapon(){
+        List<Weapon> stuff = weaponRepository.GetAllWeaponsForEnemies();
+        return stuff.get(random.nextInt(stuff.size()));
+    }
+
+    public Weapon getRandomCharacterWeapon(){
+        List<Weapon> stuff = weaponRepository.GetAllWeaponsForCharacter();
         return stuff.get(random.nextInt(stuff.size()));
     }
 }

@@ -16,18 +16,10 @@ public class Weapon {
     private String name;
     private int level;
     private int damage;
-    private int speed;
+    private int momentum;
     private String weapon_type;
-    private String char_type;
-
-    public Weapon(){}
-
-    public Weapon(String name, int level, int damage, int speed){
-        this.name = name;
-        this.level = level;
-        this.damage = damage;
-        this.speed = speed;
-    }
+    private boolean for_enemy;
+    private boolean for_character;
 
     public String getName() {
         return name;
@@ -53,12 +45,12 @@ public class Weapon {
         this.damage = damage;
     }
 
-    public int getSpeed() {
-        return speed;
+    public int getMomentum() {
+        return momentum;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public void setMomentum(int momentum) {
+        this.momentum = momentum;
     }
 
     public String getWeapon_type() {
@@ -69,12 +61,20 @@ public class Weapon {
         this.weapon_type = weapon_type;
     }
 
-    public void setChar_type(String char_type){
-        this.char_type = char_type;
+    public boolean getFor_enemy(){
+        return this.for_enemy;
     }
 
-    public String getChar_type(){
-        return this.char_type;
+    public void setFor_enemy(boolean for_enemy){
+        this.for_enemy = for_enemy;
+    }
+
+    public boolean getFor_character(){
+        return this.for_character;
+    }
+
+    public void setFor_character(boolean for_character){
+        this.for_character = for_character;
     }
 
 }

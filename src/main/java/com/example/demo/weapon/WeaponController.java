@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -21,8 +23,14 @@ public class WeaponController {
         return weaponService.getWeaponById(id);
     }
 
-    @GetMapping("/random/{char_type}")
-    public Weapon getRandomWeapon(@PathVariable String char_type){
-        return weaponService.getRandomWeapon(char_type);
+    @GetMapping("/random/enemy")
+    public Weapon getRandomEnemyWeapon(){
+        return weaponService.getRandomEnemyWeapon();
     }
+
+    @GetMapping("/random/character")
+    public Weapon getRandomCharacterWeapon() {
+        return weaponService.getRandomCharacterWeapon();
+    }
+    
 }

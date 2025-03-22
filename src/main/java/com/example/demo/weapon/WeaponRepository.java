@@ -8,6 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface WeaponRepository extends JpaRepository<Weapon, Integer>{
 
-    @Query("select w from Weapon w WHERE w.char_type LIKE %:char_type%")
-    List<Weapon> GetAllWeaponsForCharType(String char_type);
+    @Query("select w from Weapon w WHERE w.for_enemy = true")
+    List<Weapon> GetAllWeaponsForEnemies();
+
+    @Query("select w from Weapon w WHERE w.for_character = true")
+    List<Weapon> GetAllWeaponsForCharacter();
 }
