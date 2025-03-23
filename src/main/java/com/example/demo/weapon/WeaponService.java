@@ -18,13 +18,14 @@ public class WeaponService {
         return weaponRepository.findById(id).get();
     }
 
-    public Weapon getRandomEnemyWeapon(){
-        List<Weapon> stuff = weaponRepository.GetAllWeaponsForEnemies();
-        return stuff.get(random.nextInt(stuff.size()));
+    public Weapon getRandomEnemyWeapon(int enemy_level){
+        List<Weapon> weapons = weaponRepository.GetAllWeaponsForEnemies(enemy_level);
+        System.out.println(weapons.size());
+        return weapons.get(random.nextInt(weapons.size()));
     }
-
+ 
     public Weapon getRandomCharacterWeapon(){
-        List<Weapon> stuff = weaponRepository.GetAllWeaponsForCharacter();
-        return stuff.get(random.nextInt(stuff.size()));
+        List<Weapon> weapons = weaponRepository.GetAllWeaponsForCharacter();
+        return weapons.get(random.nextInt(weapons.size()));
     }
 }

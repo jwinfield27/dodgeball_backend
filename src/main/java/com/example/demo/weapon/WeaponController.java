@@ -23,9 +23,9 @@ public class WeaponController {
         return weaponService.getWeaponById(id);
     }
 
-    @GetMapping("/random/enemy")
-    public Weapon getRandomEnemyWeapon(){
-        return weaponService.getRandomEnemyWeapon();
+    @GetMapping("/random/enemy/{level}")
+    public Weapon getRandomEnemyWeapon(@PathVariable int level){
+        return weaponService.getRandomEnemyWeapon(level);
     }
 
     @GetMapping("/random/character")

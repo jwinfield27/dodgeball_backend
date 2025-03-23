@@ -18,8 +18,6 @@ public class Enemy {
 
     private int level;
 
-    private int weapon_id;
-
     private int sprite_size;
 
     public Enemy(){}
@@ -27,7 +25,6 @@ public class Enemy {
     public Enemy(String name, int level, int weapon_id, int sprite_size){
         this.name = name;
         this.level = level;
-        this.weapon_id = weapon_id;
         this.sprite_size = sprite_size;
     }
 
@@ -45,14 +42,6 @@ public class Enemy {
 
     public void setLevel(int level){
         this.level = level;
-    }
-
-    public int getWeaponId(){
-        return weapon_id;
-    }
-
-    public void setWeaponId(int weapon_id){
-        this.weapon_id = weapon_id;
     }
 
     public int getSprite_size() {
